@@ -19,6 +19,8 @@
     position: relative;
     color: var(--sea-blue);
     font-size: 74px;
+    -webkit-text-stroke-width: 0.7px;
+    -webkit-text-stroke-color: var(--primary-light);
 }
 
 .title::before {

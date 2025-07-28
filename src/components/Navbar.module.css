@@ -1,6 +1,132 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    display: none !important;
+  }
+  nav.mobileNav{
+    display: flex;
+  }
+
+  .navLinks {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+.mobileNav{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.mobileNav .mobileTitle{
+    color: var(--sea-blue);
+    position: relative;
+    width: 180px;
+    padding-left: 5px;
+    border-left: 2px solid var(--sea-blue);
+}
+
+.mobileTitle::before{
+    animation: widthGrow 0.5s ease-in-out forwards;
+    border-bottom: 2px solid var(--sea-blue);
+    border-radius: 1px;
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+/* Inserting this collapsed row between two flex items will make 
+ * the flex item that comes after it break to a new row */
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+
+@keyframes heightGrow {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+
+.mobileNav  .mobileNavLinks{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 1rem;
+    list-style: none;
+    font-size: 24px;
+    position: relative;
+}
+
+
+
+.mobileNav button{
+    margin-right: 20px;
+    background-color: transparent;
+    border: 2px solid var(--sea-blue);
+    border-radius: 3px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    mix-blend-mode: darken;
+}
+
+.mobileNav button.open{
+    background-color: var(--sea-blue);
+    mix-blend-mode: difference;
+}
+
+.mobileNav .burgerMenu.active{
+    background-color: #183B4E !important;
+}
+
+.mobileNav  .mobileNavLinks li{
+    color: var(--sea-blue);
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+} 
+.mobileNav  .mobileNavLinks li:hover{
+    background-color: var(--primary-light);
+}
+
+
+.mobileNav  .mobileNavLinks::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-bottom: 10px solid var(--sunny-yellow);
+    border-top: 10px solid var(--sunny-yellow);
+    background-color: var(--sea-blue);
+    opacity: 0.2;
+}
+
+
 .navbar{
 
     background-color: #F3F3E0;
@@ -10,6 +136,7 @@
     position: relative;
     justify-content: space-around;
     /* border-bottom: 4px solid #183B4E ; */
+    /* flex-wrap: wrap; allow wrapping on small screens */
  
 }
 
