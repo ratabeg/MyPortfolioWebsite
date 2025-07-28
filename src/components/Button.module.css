@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    /* --primary-dark: #1a1a1a; */
+    /* --primary-dark: #116466;
+    --primary-light: #d1e8e2;
+    --transition-normal: 0.3s ease-in-out;
+    --black: #000; */
+
+    --primary-dark: #183B4E;
+    --primary-light: #F3F3E0;
+    --sunny-yellow: #DDA853;
+    --sea-blue: #183B4E;
+}
+
+.btn{
+    /* background-color: #d1e8e2; */
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 0.2rem;
+    font-weight: 500;
+    transition: var(--transition-normal);
+    cursor: pointer;
+    /* overflow: hidden; */
+    border: 2px solid var(--primary-dark);
+    z-index: 1;
+    color: var(--primary-dark);
+    background-color: var(--black);
+    font-size: 16px;
+    position: relative;
+}
+
+.btn:hover{
+    background-color: var(--sea-blue);
+    color: var(--primary-light);
+}
+
+.btn::before{
+   content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+    transform: scale(1.6);
+
+    
+}
+
+.btn:hover::before{
+    transform: scale(1.2);
+    background-color: var(--primary-dark);
+    opacity: 0;
+}
+
+.btn:active{
+    transform: scale(1.1);
+}
+
+
+.toggleBtn{
+    background-color: #F3F3E0;
+    color: #000;
+    border: 2px solid #183B4E;
+    border-radius: 500px;
+    width: 50px;
+    height: 28px;
+    cursor: pointer;
+    position: relative;
+}
+
+.toggleBtn .thumb{
+    position: absolute;
+    content: "";
+    width: 25px;
+    height: 22px;
+    border-radius: 50rem;
+    background-color: #183B4E;
+    top: 4%;
+    left: 1px;
+    background-color: #DDA853;
+    transition: transform 0.2s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.toggleBtn .thumb.isToggled{
+    background-color: #27548A !important;
+    transform: translateX(77%);
+}
+

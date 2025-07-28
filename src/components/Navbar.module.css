@@ -1,0 +1,71 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.navbar{
+
+    background-color: #F3F3E0;
+    color: black;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-around;
+    /* border-bottom: 4px solid #183B4E ; */
+ 
+}
+
+.navbar::after{
+    border-bottom: 4px solid #183B4E ;
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;    
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+    animation: widthGrow 0.5s ease-in-out forwards;
+
+}
+@keyframes widthGrow {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+
+
+.navbar h1{
+    font-size: 42px;
+    margin-left: 10px;
+    color: #183B4E;
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-weight: 700;
+      font-family: "Josefin Sans", sans-serif;
+    /* flex-grow: 1; */
+    
+}
+
+.navbar ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding: 1rem;
+    font-family: "Josefin Sans", sans-serif;
+    color:#183B4E ;
+    
+
+
+}
+
+.navbar ul li{
+    color:#183B4E ;
+
+}
+
+a:visited {
+    color:#183B4E ;
+}
