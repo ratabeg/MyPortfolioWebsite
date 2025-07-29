@@ -26,7 +26,7 @@ function Navbar() {
                 <li><a href="#about">About</a></li>
                 <li><a href="#about">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#Education">Education</a></li>
             </ul>
 
             <ToggleButton onClick={toggleDarkMode} isToggled={dark}>
@@ -51,7 +51,7 @@ function Navbar() {
                 <li><a href="#about">About</a></li>
                 <li><a href="#about">Skill</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#education">Education</a></li>
             </ul>
             )}
             

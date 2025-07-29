@@ -1,0 +1,33 @@
+/* Media query for small screens */
+@media (max-width: 768px) {
+ 
+ .education img{
+    transform: scale(0.8);
+ }
+}
+
+
+.education{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5rem;
+}
+
+.content{
+    line-height: 8px;
+    font-size: 18px;
+}
+
+.title{
+    /* font-size: 62px ; */
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: var(--sea-blue);
+    margin-bottom: 2rem;
+}
+
+.courseList{
+    width: 400px;
+}
