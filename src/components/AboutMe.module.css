@@ -1,3 +1,12 @@
+/* Media query for small screens */
+@media (max-width: 768px) {
+ .content{
+    flex-direction: column !important;
+ }
+ 
+}
+
+
 .title{
     font-size: 4.5rem;
     font-weight: 600;
@@ -10,6 +19,20 @@
     border: 4px solid var(--sunny-yellow);
 }
 
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    80% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
 .aboutMe{
     display: flex;
@@ -19,5 +42,23 @@
     text-align: center;
     padding: 2rem;
     gap: 1rem;
+    border-top: 4px solid var(--primary-dark);   
+}
+
+.content{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    animation: popIn 0.5s ease-in-out forwards;
+
+}
+
+.content p{
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    line-height: 1.6;
+    max-width: 600px;
+    text-align: left;
+
 }
 
