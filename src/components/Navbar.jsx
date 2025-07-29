@@ -1,22 +1,23 @@
-import React from 'react';
+// import React, { createContext } from 'react';
 import Button, { ToggleButton,SmallButton } from './Button';
 import style from './Navbar.module.css';
-import { useState } from 'react';
-
+import { useContext, useState } from 'react';
 import logo from "../assets/dark-theme.svg"; // Assuming the logo is in the assets folder
 import BurgerMenu from "../assets/burger-menu.svg"; // Assuming the logo is in the assets folder
 import BurgerMenuClose from "../assets/hambger-close.svg"; // Assuming the logo is in the assets folder
+import DarkModeContext from '../context/DarkModeContext';
 
 function Navbar() {
 
-    const [dark, setDark] = useState(false);
+    // const [dark, setDark] = useState(false);
     const [isMobilemenuOpen, setIsMobilemenuOpen] = useState(false);
 
-    function toggleDarkMode() {
-        // alert("Dark mode toggled");
-        setDark(prev => !prev);
-    }
-    
+    const { isDark, setIsDark } = useContext(DarkModeContext);
+
+    const toggleDarkMode = () => {
+        setIsDark(prev => !prev);
+    };
+
     return (
         <>
         <nav className={style.navbar}>
@@ -26,10 +27,10 @@ function Navbar() {
                 <li><a href="#about">About</a></li>
                 <li><a href="#about">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#Education">Education</a></li>
+                <li><a href="#education">Education</a></li>
             </ul>
 
-            <ToggleButton onClick={toggleDarkMode} isToggled={dark}>
+            <ToggleButton onClick={toggleDarkMode} isToggled={isDark}>
                 <img src={logo} alt="toggle image darkmode" height="20px" />
             </ToggleButton>
 

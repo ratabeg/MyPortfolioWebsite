@@ -5,7 +5,11 @@ import Profile from "../assets/profile.jpg"; // Assuming the profile image is in
 function AboutMe() {
   return (
     <section className={style.aboutMe} id="about">
+      <span>
       <h2 className={style.title}>About Me|</h2>
+      <h2 className={style.subTitle}>Who is Raouf?</h2>
+      </span>
+
       <div className={style.content}>
       <img
         width={300}

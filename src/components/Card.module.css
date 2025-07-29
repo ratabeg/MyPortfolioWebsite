@@ -16,3 +16,19 @@
     color: var(--sunny-yellow);
     font-size: 18px;
 }
+
+.linksbtn{
+
+    background-color: var(--sunny-yellow);
+    padding: 0.4rem;
+    color: var(--primary-dark) !important;
+    border: 2px solid var(--primary-dark);
+    transition: all 0.4s ease-in-out;
+
+}
+
+.linksbtn:hover{
+    background-color: var(--sea-blue);
+    color: var(--sunny-yellow) !important;
+    transform: scale(1.1);
+}

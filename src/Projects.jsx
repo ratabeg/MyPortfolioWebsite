@@ -16,20 +16,23 @@ function Projects() {
       imageURL: Profile,
       content:
         "A personal portfolio website built with React showcasing my projects and skills.",
+      link:"https://ratabeg.cv"
     },
     {
       title: "The Central Asian Chronicles",
       subTitle: "E-commerce Store",
       imageURL: theCentralAsianChronicles,
       content:
-        "A full-featured e-commerce web app with product listings, cart, and checkout functionality.",
+        "A WordPress-powered publication dedicated to exploring the rich culture, history of Central Asia.",
+      link:"https://thecentralasianchronicles.asia/"
     },
     {
       title: "2048 Game",
       imageURL:tweentyfourtyeight,
       subTitle: "Blog Platform",
       content:
-        "A modern blog platform allowing users to create, edit, and share posts with a rich text editor.",
+        "2048 is a single-player sliding block puzzle game. The objective is to slide numbered tiles on a grid to combine them to create a tile with the number 2048.",
+        link:"https://ratabeg.github.io/2048-game/"
     },
   ];
  
@@ -55,6 +58,7 @@ function Projects() {
               subTitle={project.subTitle}
               content={project.content}
               imageURL={project.imageURL}
+              link = {project.link}
             />
           ))}
 

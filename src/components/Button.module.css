@@ -1,17 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root{
-    /* --primary-dark: #1a1a1a; */
-    /* --primary-dark: #116466;
-    --primary-light: #d1e8e2;
-    --transition-normal: 0.3s ease-in-out;
-    --black: #000; */
+/* :root{
 
     --primary-dark: #183B4E;
     --primary-light: #F3F3E0;
     --sunny-yellow: #DDA853;
     --sea-blue: #183B4E;
-}
+} */
 
 .btn{
     /* background-color: #d1e8e2; */

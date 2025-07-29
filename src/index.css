@@ -13,12 +13,31 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-
-  --background-color: #F3F3E0;
-  background-color: var(--background-color)
-;
 }
 
+:root{
+
+  
+  --background-color: #F3F3E0;
+    --white-beige: #F3F3E0;
+    --sunny-yellow: #DDA853;
+    --sea-blue: #183B4E;
+    --sky-blue: #27548A;
+
+    --primary-dark:var(--sea-blue);
+    --primary-light: var(--white-beige);
+    --secondary-light: var(--sunny-yellow);
+    --secondary-dark: var(--sky-blue);
+}
+
+
+.darkmode{
+  
+}
+
+body{
+  background-color: var(--background-color);
+}
 
 a {
   /* font-weight: 500; */

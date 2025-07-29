@@ -47,8 +47,9 @@
     left: 0;
     z-index: -1;
     transition: all 0.3s ease-in-out;
-    
 }
+
+
 
 /* Inserting this collapsed row between two flex items will make 
  * the flex item that comes after it break to a new row */
