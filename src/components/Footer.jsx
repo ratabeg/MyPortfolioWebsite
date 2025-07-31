@@ -1,9 +1,12 @@
 import React from 'react';
+import Socials from './Socials';
+import styles from "./Footer.module.css"
 
 function Footer() {
     return (
-        <footer style={{ textAlign: 'center', padding: '1rem', background: '#222', color: '#fff' }}>
+        <footer className={styles.footer}>
             <p>&copy; {new Date().getFullYear()} The Wandering Developer. All rights reserved.</p>
+            <Socials/>
         </footer>
     );
 }

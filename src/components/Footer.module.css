@@ -1,0 +1,10 @@
+/* style={{ display:"flex",textAlign: 'center', padding: '1rem', background: '#222', color: '#fff' }} */
+
+.footer{
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    background-color: #222;
+    color: var(--primary-light);
+}
+
