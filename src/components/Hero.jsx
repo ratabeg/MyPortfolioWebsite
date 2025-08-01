@@ -5,6 +5,7 @@ import Socials from './Socials';
 import Typewriter from '../hooks/useTypewriter';
 
 function Hero() {
+
     return (
         <section className={style.hero}>
             <div className={style.heroContent}>
@@ -14,7 +15,9 @@ function Hero() {
                 <Socials/>
                 <Typewriter text= "I'm a developer!"/>
                 <a href="#projects" className="hero-btn">View My Work</a>
-                <Button text={"Download CV"}/>
+                <a href={ window.location.href + "/Resume.pdf"} download>
+                    <Button text={"Download CV"}/>
+                </a>
             </div>
         </section>
     );

@@ -9,7 +9,7 @@ function Experience() {
     company:"LobbyIQ & Queen St Analytics",
     location:"London, Ontario Canada",
     desc:"Creating responsive, user-friendly interfaces that align with modern design trends and performance standards",
-    techStack:["Javascript","Typescript","Pyhton","C#"]
+    techStack:["Javascript","Typescript","Python","C#"]
   },
   {
     title:"Wordpress Developer",
