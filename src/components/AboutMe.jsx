@@ -1,6 +1,10 @@
 import React from "react";
 import style from "./AboutMe.module.css";
 import Profile from "../assets/profile.jpg"; // Assuming the profile image is in the assets folder
+import laptop from "../assets/jslogo.png"; // Assuming the profile image is in the assets folder
+import devlogo from "../assets/devlogo.png"; // Assuming the profile image is in the assets folder
+import gitlogo from "../assets/Git_icon.png"; // Assuming the profile image is in the assets folder
+import golang from "../assets/golang.png"; // Assuming the profile image is in the assets folder
 
 function AboutMe() {
   return (
@@ -11,6 +15,13 @@ function AboutMe() {
       </span>
 
       <div className={style.content}>
+      <img className={style.background} src={devlogo} width={100}/>
+      <img className={style.background} src={laptop} width={100}/>
+      <img className={style.background} src={gitlogo} width={100}/>
+
+      <img className={style.background} src={golang} width={100}/>
+
+
       <img
         width={300}
         height={"auto"}
@@ -28,6 +39,9 @@ function AboutMe() {
         latest tech trends. Feel free to reach out if you'd like to collaborate
         or just chat about tech!
       </p>
+
+
+      
       </div>
     </section>
   );
