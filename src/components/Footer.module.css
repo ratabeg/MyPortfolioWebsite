@@ -4,7 +4,13 @@
     display: flex;
     justify-content: space-around;
     padding: 1rem;
-    background-color: #222;
-    color: var(--primary-light);
+    color: var(--color-neutral);
+    font-weight:400;
+    border-top: 2px solid var(--color-accent);
 }
 
+
+.footer p {
+background-color:var(--color-accent);
+padding:0.5rem;
+}

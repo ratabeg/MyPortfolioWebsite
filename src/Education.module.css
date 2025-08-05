@@ -4,30 +4,80 @@
  .education img{
     transform: scale(0.8);
  }
+ .container{
+    flex-direction:column;
+    padding:0;
+    transform:scale(0.75);
+}
+
 }
 
 
 .education{
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-bottom: 5rem;
+    background: linear-gradient(90deg, var(--sky-blue) 0%,180deg,var(--primary-light) 100%);
+    
 }
 
 .content{
     line-height: 8px;
     font-size: 18px;
+    font-family: "Fira Sans", sans-serif;
+    font-weight:200;
+    color: var(--color-accent);
+
+    
 }
 
 .title{
     /* font-size: 62px ; */
+    background-color:var(--color-neutral);
+    padding:0.5rem;
     font-size: 4.5rem;
     font-weight: 600;
     color: var(--sea-blue);
     margin-bottom: 2rem;
+    font-family: "Orbitron", sans-serif;
+    color:var(--color-accent);
+    text-shadow: -5px 1px 0px var(--color-primary);
 }
 
 .courseList{
     width: 400px;
+    color: var(--color-accent);
+
+}
+
+.container{
+    display: flex;
+    padding:3rem;
+    border-radius:5px;
+    box-shadow: var(--color-primary) 0px 2px 4px,var(--color-accent) 0px 7px 13px -3px, var(--color-neutral) 0px -3px 0px inset;
+
+    
+}
+
+.container img{
+    animation: popInOut 0.4s ease-in-out;
+}
+
+@keyframes popInOut {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+ 
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
