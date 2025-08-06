@@ -14,7 +14,7 @@
     .title{
         /* width: max-content; */
         /* margin-left: -150px !important; */
-        font-size: 3.5rem !important;
+        {{/* font-size: 3.5rem !important; */}}
     }
 
     .instructions{
@@ -36,14 +36,18 @@
 }
 
 .experienceContainer{
-    /* { display: "flex", gap: "8rem",alignItems:"center" } */
     display: flex;
     gap: 8rem;
     align-items: center;
 }
+
+.experienceContainer ul{
+    padding:0;
+}
+
 .title{
-    font-size: 4.5rem;
-    background-color:var(--color-accent);
+
+    font-size: min(5rem,12vw);
     width: fit-content;
     font-family: "Orbitron", sans-serif;
     color:var(--color-light);

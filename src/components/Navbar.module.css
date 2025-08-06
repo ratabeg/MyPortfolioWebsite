@@ -29,14 +29,14 @@
 
 .mobileNav{
     display: none;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     flex-wrap: wrap;
+ 
 }
 
 .mobileNav .mobileTitle{
-    font-size: 26px;
- 
+    font-size: min(26px,6vw);
     font-weight: 200;
     font-family: "Fira Sans", sans-serif;
     color: var(--color-accent);

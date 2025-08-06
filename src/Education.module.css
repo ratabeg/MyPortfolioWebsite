@@ -7,7 +7,7 @@
  .container{
     flex-direction:column;
     padding:0;
-    transform:scale(0.75);
+    transform:scale(0.6);
 }
 
 }
@@ -38,7 +38,7 @@
     /* font-size: 62px ; */
     background-color:var(--color-neutral);
     padding:0.5rem;
-    font-size: 4.5rem;
+    font-size: min(4.5rem,15vw);
     font-weight: 600;
     color: var(--sea-blue);
     margin-bottom: 2rem;
