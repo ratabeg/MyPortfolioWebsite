@@ -13,7 +13,7 @@ function Card({title,subTitle, content,imageURL,link}) {
                 <p>{content}</p>
             </div>
 
-            <a href={link} className={styles.linksbtn}>Check it out...</a>
+            <a href={link} target="_blank" rel="noopener noreferrer" className={styles.linksbtn}>Check it out...</a>
         </div>
     );
 }
