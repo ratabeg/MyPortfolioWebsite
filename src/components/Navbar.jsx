@@ -29,6 +29,7 @@ function Navbar() {
 
         <h1>The Wandering Developer</h1>
 
+        {/* The Main Navbar */}
         <ul className={style.navLinks}>
           <li>
             <a href="#about">About</a>
