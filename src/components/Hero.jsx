@@ -15,7 +15,7 @@ function Hero() {
         {/* <p>I'm Raouf Atabeg, a passionate developer.</p> */}
         
         <Socials />
-        <Typewriter text="I'm a Developer!" />
+        <Typewriter text="I am a developer!"/>
         <a href="#projects" className="hero-btn">
           View My Work
         </a>
