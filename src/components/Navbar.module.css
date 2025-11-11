@@ -44,18 +44,16 @@
     width: 0%;
     height: 100%;
     transition: all 0.2s ease-in-out;
-    /* border-left: 1px solid #280A3E; */
     border-left: 1px solid #280A3E;
-    
-
 }
-
 
 .navLinks li:hover::after{
     background-color:var(--color-accent);
     width: 100%;
     z-index: -1;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
+
 .navLinks li:hover a{
     transition: all 0.2s ease-in;
     /* text-shadow: 1px 1.5px 0px #689B8A; */
