@@ -11,13 +11,14 @@ function Hero() {
         <h1 className={style.title}>
           Hi! I'm <span>Raouf</span>
         </h1>
-        {/* <h1>Welcome to My Portfolio</h1> */}
-        {/* <p>I'm Raouf Atabeg, a passionate developer.</p> */}
         
         <Socials />
-        <Typewriter text="I am a developer!"/>
-        <a href="#projects" className="hero-btn">
-          View My Work
+        <h2 className={style.quote}>
+         “Bored minds build brilliant things. 🧠”
+        </h2>
+        {/* <Typewriter text="I'm a developer!"/> */}
+        <a href="#projects">
+          View My Work 👉
         </a>
         <a href={window.location.href + "/Resume.pdf"} download>
           <Button text={"Download CV"} />
