@@ -5,6 +5,8 @@ import tweentyfourtyeight from "./assets/2048.png"; // Assuming the profile imag
 import theCentralAsianChronicles from "./assets/theCentralAsianChronicles.png"; // Assuming the profile image is in the assets folder
 import Profile from "./assets/profile.jpg"; // Assuming the profile image is in the assets folder
 import Carousel from "./components/Carousel";
+import VoyageNYC from "./assets/voyageNYC.png"; // Assuming the profile image is in the assets folder
+
 
 function Projects() {
   const projectData = [
@@ -33,20 +35,12 @@ function Projects() {
       link: "https://ratabeg.github.io/2048-game/",
     },
       {
-      title: "2048 Game",
-      imageURL: tweentyfourtyeight,
-      subTitle: "Blog Platform",
+      title: "VoyageNYC",
+      imageURL: VoyageNYC,
+      subTitle: "Website",
       content:
-        "2048 is a single-player sliding block puzzle game. The objective is to slide numbered tiles on a grid to combine them to create a tile with the number 2048.",
-      link: "https://ratabeg.github.io/2048-game/",
-    },
-     {
-      title: "My Website Portfolio",
-      subTitle: "React Portfolio",
-      imageURL: Profile,
-      content:
-        "A personal portfolio website built with React showcasing my projects and skills.",
-      link: "https://ratabeg.cv",
+        "A responsive and visually engaging website design for a fictional New York City tour company, showcasing front-end development, UI/UX design, and interactive features. ",
+      link: "https://ratabeg.github.io/voyage-nyc/",
     },
   ];
 
