@@ -14,7 +14,7 @@
     .title{
         /* width: max-content; */
         /* margin-left: -150px !important; */
-        {{/* font-size: 3.5rem !important; */}}
+        /* {{font-size: 3.5rem !important;}} */
     }
 
     .instructions{
@@ -39,6 +39,9 @@
     display: flex;
     gap: 8rem;
     align-items: center;
+    justify-content: center;
+    max-width: 50vw;
+    padding: 1.2rem;
 }
 
 .experienceContainer ul{
@@ -78,6 +81,8 @@
     padding: 2rem;
     height: 300px;
     min-width: 500px;
+    background-color: var(--sunny-yellow);
+    box-shadow: 2px 30px 40px var(--primary-dark);
 
 }
 
@@ -113,5 +118,3 @@
     border: 4px solid var(--primary-light);
     transform: trans;
 }
-
-

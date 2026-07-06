@@ -58,7 +58,6 @@ function Experience() {
         <div className={style.currentExperience}>
           <li>
             <span className={style.currentExperienceTitle}>
-              {/* <h3>Software Engineer @ Tech Company</h3> */}
               <h3>{currentExperience.title}</h3>
               <h4>{currentExperience.company}</h4>
 
@@ -76,9 +75,7 @@ function Experience() {
                   )
                 })
               }
-              {/* <p className={style.techStack}>Javascript</p>
-              <p className={style.techStack}>C++</p>
-              <p className={style.techStack}>Go Lang</p> */}
+            
             </div>
 
        
