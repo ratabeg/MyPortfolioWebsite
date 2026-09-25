@@ -8,6 +8,7 @@ import Education from './Education.jsx'
 import Experience from './Experience.jsx'
 import Projects from './Projects.jsx'
 import DarkModeContext from './context/DarkModeContext.jsx'
+import ClickEffects from './components/ClickEffects.jsx'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
       <Experience/>
       <Education/>
       <Footer/>
+      <ClickEffects/>
       </body>
       </DarkModeContext.Provider>
     </>
