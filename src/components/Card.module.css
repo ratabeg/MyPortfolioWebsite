@@ -14,3 +14,18 @@
   .imagePanel img { height: 190px; }
   .cardContent { padding: 24px; }
 }
+
+/* Animate only newly selected slides, and keep hidden slides out of focus. */
+@media (prefers-reduced-motion: no-preference) {
+  :global([data-animated='true']) :global([data-active='true']) .cardContent > * {
+    animation: contentReveal 300ms cubic-bezier(.22, 1, .36, 1) both;
+  }
+  :global([data-animated='true']) :global([data-active='true']) .category { animation-delay: 40ms; }
+  :global([data-animated='true']) :global([data-active='true']) .cardContent h3 { animation-delay: 80ms; }
+  :global([data-animated='true']) :global([data-active='true']) .description { animation-delay: 120ms; }
+  :global([data-animated='true']) :global([data-active='true']) .linksbtn { animation-delay: 160ms; }
+}
+@keyframes contentReveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

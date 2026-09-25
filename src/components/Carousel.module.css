@@ -1,15 +1,21 @@
 .carousel { width: min(100%, 960px); min-width: 0; color: var(--color-accent); }
 .viewport { overflow: hidden; border-radius: 16px; border: 1px solid var(--color-primary); touch-action: pan-y pinch-zoom; }
-.track { display: flex; align-items: stretch; transition: transform 350ms ease; }
-.slide { flex: 0 0 100%; min-width: 0; display: flex; box-sizing: border-box; }
+.track { display: grid; }
+.slide { grid-area: 1 / 1; min-width: 0; display: flex; box-sizing: border-box; visibility: hidden; pointer-events: none; }
+.slide[data-active='true'] { visibility: visible; pointer-events: auto; }
+.carousel[data-animated='true'] .slide[data-active='true'] { animation: slideReveal 360ms cubic-bezier(.22, 1, .36, 1) both; }
+@keyframes slideReveal {
+  from { opacity: 0; transform: translateX(var(--slide-from)); }
+  to { opacity: 1; transform: translateX(0); }
+}
 .controls { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 24px; }
 .arrow { width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--color-accent); background: var(--color-light); color: var(--color-accent); font-size: 24px; }
 .arrow:hover { background: var(--color-accent); color: var(--color-light); }
 .dots { display: flex; }
 .dot { display: grid; place-items: center; width: 44px; height: 44px; border: 0; background: transparent; padding: 0; }
-.dot span { display: block; width: 8px; height: 8px; border: 1px solid var(--color-accent); border-radius: 20px; transition: width 180ms ease; }
+.dot span { display: block; width: 8px; height: 8px; border: 1px solid var(--color-accent); border-radius: 20px; transition: width 300ms cubic-bezier(.22, 1, .36, 1), background-color 250ms ease; }
 .dot[aria-current] span { width: 24px; background: var(--color-accent); }
 .carousel button:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
 .status { text-align: center; font-size: 14px; line-height: 1.5; margin: 12px 0 0; }
 @media (max-width: 400px) { .controls { gap: 8px; } }
-@media (prefers-reduced-motion: reduce) { .track, .dot span { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .dot span { transition: none; } .carousel[data-animated='true'] .slide[data-active='true'] { animation: none; } }

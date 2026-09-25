@@ -4,16 +4,26 @@ import style from './Carousel.module.css';
 export default function Carousel({ children }) {
   const items = Children.toArray(children);
   const [selected, setSelected] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const [hasNavigated, setHasNavigated] = useState(false);
   const active = Math.min(selected, Math.max(0, items.length - 1));
   const trackId = useId();
   const touch = useRef(null);
-  const move = (step) => setSelected((active + step + items.length) % items.length);
+  const goTo = (index, travelDirection) => {
+    if (index === active) return;
+    setDirection(travelDirection);
+    setHasNavigated(true);
+    setSelected(index);
+  };
+  const move = (step) => goTo((active + step + items.length) % items.length, step);
 
   if (!items.length) return null;
 
   return (
     <div
       className={style.carousel}
+      data-animated={hasNavigated}
+      style={{ '--slide-from': `${direction * 40}px` }}
       role="region"
       aria-roledescription="carousel"
       aria-label="Featured projects"
@@ -42,11 +52,12 @@ export default function Carousel({ children }) {
           touch.current = null;
         }}
       >
-        <div className={style.track} style={{ transform: `translateX(-${active * 100}%)` }}>
+        <div className={style.track}>
           {items.map((child, index) => (
             <div
               key={child.key ?? index}
               className={style.slide}
+              data-active={index === active}
               role="group"
               aria-roledescription="slide"
               aria-label={`${index + 1} of ${items.length}`}
@@ -70,7 +81,7 @@ export default function Carousel({ children }) {
                 aria-label={`Show project ${index + 1}: ${child.props.title ?? 'Project'}`}
                 aria-current={index === active ? 'true' : undefined}
                 aria-controls={trackId}
-                onClick={() => setSelected(index)}
+                onClick={() => goTo(index, index > active ? 1 : -1)}
               ><span /></button>
             ))}
           </div>
