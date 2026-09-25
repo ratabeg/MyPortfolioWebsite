@@ -1,6 +1,5 @@
 import styles from "./Projects.module.css";
 import Card from "./components/Card";
-import Button from "./components/Button";
 import tweentyfourtyeight from "./assets/2048.png"; // Assuming the profile image is in the assets folder
 import theCentralAsianChronicles from "./assets/theCentralAsianChronicles.png"; // Assuming the profile image is in the assets folder
 import Profile from "./assets/profile.jpg"; // Assuming the profile image is in the assets folder
@@ -20,7 +19,7 @@ function Projects() {
     },
     {
       title: "The Central Asian Chronicles",
-      subTitle: "E-commerce Store",
+      subTitle: "WordPress Publication",
       imageURL: theCentralAsianChronicles,
       content:
         "A WordPress-powered publication dedicated to exploring the rich culture, history of Central Asia.",
@@ -29,7 +28,7 @@ function Projects() {
     {
       title: "2048 Game",
       imageURL: tweentyfourtyeight,
-      subTitle: "Blog Platform",
+      subTitle: "Puzzle Game",
       content:
         "2048 is a single-player sliding block puzzle game. The objective is to slide numbered tiles on a grid to combine them to create a tile with the number 2048.",
       link: "https://ratabeg.github.io/2048-game/",
@@ -52,8 +51,8 @@ function Projects() {
       </span>
 
       <Carousel>
-        {projectData.map((project, index) => (
-          <Card key={index} {...project} className={styles.projectCard} />
+        {projectData.map((project) => (
+          <Card key={project.title} {...project} />
         ))}
       </Carousel>
     </section>

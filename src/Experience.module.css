@@ -31,7 +31,7 @@
     /* background-color: var(--sea-blue); */
     color: var(--primary-light);
     padding: 10rem;
-    margin-top: -220px;
+    margin-top: 0;
     background: linear-gradient(135deg, var(--color-primary), var(--primary-light));
 }
 
