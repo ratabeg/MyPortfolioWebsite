@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./Button";
+import { FaArrowDown, FaDownload } from "react-icons/fa6";
 import style from "./Hero.module.css";
 import Socials from "./Socials";
 import Typewriter from "../hooks/useTypewriter";
@@ -17,11 +17,17 @@ function Hero() {
          “Bored minds build brilliant things. 🧠”
         </h2>
         {/* <Typewriter text="I'm a developer!"/> */}
-        <a href="#projects">
-          View My Work 👉
+        <a className={style.workButton} href="#projects">
+          <span>View My Work</span>
+          <span className={style.workIcon} aria-hidden="true">
+            <FaArrowDown />
+          </span>
         </a>
-        <a href={window.location.href + "/Resume.pdf"} download>
-          <Button text={"Download CV"} />
+        <a className={style.downloadButton} href="/Resume.pdf" download>
+          <span>Download CV</span>
+          <span className={style.downloadIcon} aria-hidden="true">
+            <FaDownload />
+          </span>
         </a>
       </div>
     </section>

@@ -25,6 +25,203 @@
 .heroContent a:hover{
   text-decoration: underline;
 }
+
+.heroContent .downloadButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 160px;
+  padding: 0.85rem 1rem 0.85rem 1.35rem;
+  overflow: hidden;
+  border: 2px solid var(--color-accent);
+  border-radius: 8px;
+  background: var(--color-accent);
+  color: var(--color-light);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 7px 0 color-mix(in srgb, var(--color-accent) 45%, transparent);
+  isolation: isolate;
+  transition: color 180ms ease, transform 180ms cubic-bezier(.2, .8, .2, 1),
+    box-shadow 180ms ease;
+}
+
+.heroContent .workButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 160px;
+  padding: 0.85rem 1rem 0.85rem 1.35rem;
+  overflow: hidden;
+  border: 2px solid var(--color-accent);
+  border-radius: 8px;
+  background: var(--sunny-yellow);
+  color: var(--primary-dark);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 7px 0 color-mix(in srgb, var(--color-accent) 35%, transparent);
+  isolation: isolate;
+  transition: color 180ms ease, transform 180ms cubic-bezier(.2, .8, .2, 1),
+    box-shadow 180ms ease;
+}
+
+.workButton::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-accent);
+  transform: translateX(102%) skewX(14deg);
+  transform-origin: right;
+  transition: transform 280ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.heroContent .workButton:hover,
+.heroContent .workButton:focus-visible {
+  color: var(--color-light);
+  text-decoration: none;
+  transform: translateY(-5px);
+  box-shadow: 0 13px 22px color-mix(in srgb, var(--color-accent) 32%, transparent);
+}
+
+.workButton:hover::before,
+.workButton:focus-visible::before {
+  transform: translateX(0) skewX(0);
+}
+
+.workIcon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-left: auto;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--primary-dark) 12%, transparent);
+  transition: background-color 180ms ease, transform 220ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.workIcon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.workButton:hover .workIcon,
+.workButton:focus-visible .workIcon {
+  background: color-mix(in srgb, var(--color-light) 18%, transparent);
+  animation: workArrowBounce 700ms ease-in-out infinite;
+}
+
+.heroContent .workButton:active {
+  transform: translateY(3px) scale(0.96);
+  box-shadow: 0 2px 0 color-mix(in srgb, var(--color-accent) 45%, transparent);
+}
+
+.workButton:active .workIcon {
+  animation: workArrowDrop 220ms ease-out;
+}
+
+@keyframes workArrowBounce {
+  0%, 100% { transform: translateY(-2px); }
+  50% { transform: translateY(3px); }
+}
+
+@keyframes workArrowDrop {
+  0% { transform: translateY(-4px); opacity: 1; }
+  65% { transform: translateY(7px); opacity: 0; }
+  66% { transform: translateY(-7px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.downloadButton::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--sunny-yellow);
+  transform: translateX(-102%) skewX(-14deg);
+  transform-origin: left;
+  transition: transform 280ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.heroContent .downloadButton:hover,
+.heroContent .downloadButton:focus-visible {
+  color: var(--primary-dark);
+  text-decoration: none;
+  transform: translateY(-5px);
+  box-shadow: 0 13px 22px color-mix(in srgb, var(--color-accent) 32%, transparent);
+}
+
+.downloadButton:hover::before,
+.downloadButton:focus-visible::before {
+  transform: translateX(0) skewX(0);
+}
+
+.downloadIcon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-left: auto;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--color-light) 18%, transparent);
+  transition: background-color 180ms ease, transform 220ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.downloadIcon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.downloadButton:hover .downloadIcon,
+.downloadButton:focus-visible .downloadIcon {
+  background: color-mix(in srgb, var(--primary-dark) 12%, transparent);
+  animation: downloadBounce 700ms ease-in-out infinite;
+}
+
+.heroContent .downloadButton:active {
+  transform: translateY(3px) scale(0.96);
+  box-shadow: 0 2px 0 color-mix(in srgb, var(--color-accent) 45%, transparent);
+}
+
+.downloadButton:active .downloadIcon {
+  animation: downloadDrop 220ms ease-out;
+}
+
+@keyframes downloadBounce {
+  0%, 100% { transform: translateY(-2px); }
+  50% { transform: translateY(3px); }
+}
+
+@keyframes downloadDrop {
+  0% { transform: translateY(-4px); opacity: 1; }
+  65% { transform: translateY(7px); opacity: 0; }
+  66% { transform: translateY(-7px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .downloadButton,
+  .downloadButton::before,
+  .downloadIcon,
+  .workButton,
+  .workButton::before,
+  .workIcon {
+    transition: none;
+  }
+
+  .downloadButton:hover .downloadIcon,
+  .downloadButton:focus-visible .downloadIcon,
+  .downloadButton:active .downloadIcon {
+    animation: none;
+  }
+
+  .workButton:hover .workIcon,
+  .workButton:focus-visible .workIcon,
+  .workButton:active .workIcon {
+    animation: none;
+  }
+}
 .title{
     position: relative;
     font-size: 6rem;
@@ -124,4 +321,3 @@
   font-weight: bold;
   color:var(--color-accent)
 }
-
