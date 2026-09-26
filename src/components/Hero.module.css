@@ -321,3 +321,140 @@
   font-weight: bold;
   color:var(--color-accent)
 }
+
+/* Terminal hero */
+.hero {
+  min-height: 100vh;
+  height: auto;
+  padding: 8rem 1.5rem 5rem;
+  box-sizing: border-box;
+}
+
+.terminal {
+  width: min(100%, 960px);
+  overflow: hidden;
+  border: 2px solid var(--color-accent);
+  border-radius: 12px;
+  background: var(--color-light);
+  box-shadow: 12px 12px 0 color-mix(in srgb, var(--color-accent) 22%, transparent), 0 28px 60px color-mix(in srgb, var(--color-accent) 18%, transparent);
+  animation: terminalBoot 600ms cubic-bezier(.2, .8, .2, 1) both;
+}
+
+.terminalBar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 1rem;
+  border-bottom: 2px solid var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-light);
+  font-family: "Fira Sans", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.windowControls { display: flex; gap: 7px; }
+.windowControls i { width: 10px; height: 10px; border: 1px solid var(--color-light); border-radius: 50%; }
+.windowControls i:first-child { background: var(--sunny-yellow); }
+.windowControls i:nth-child(2) { background: var(--color-neutral); }
+.windowControls i:last-child { background: var(--color-primary); }
+.secure { justify-self: end; color: var(--color-neutral); }
+
+.terminalScreen {
+  position: relative;
+  padding: clamp(1.25rem, 4vw, 3.5rem);
+  overflow: hidden;
+  background: linear-gradient(color-mix(in srgb, var(--color-accent) 4%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--color-accent) 4%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.terminalScreen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(transparent, color-mix(in srgb, var(--color-primary) 16%, transparent), transparent);
+  transform: translateY(-110%);
+  animation: scan 4.5s linear infinite 1.2s;
+}
+
+.bootLog {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  z-index: 1;
+  max-width: 340px;
+  font-family: "Fira Sans", monospace;
+  font-size: 0.72rem;
+  color: var(--color-accent);
+  text-align: left;
+  opacity: 0.65;
+}
+.bootLog p { margin: 0.25rem 0; opacity: 0; animation: bootLine 260ms ease-out forwards; }
+.bootLog p:nth-child(2) { animation-delay: 180ms; }
+.bootLog p:nth-child(3) { animation-delay: 360ms; }
+.bootLog span { color: var(--color-primary); font-weight: 700; }
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 650px;
+  padding: 2.4rem 0 0;
+  gap: 1.25rem;
+  text-align: left;
+  animation: contentOnline 520ms ease-out 450ms both;
+}
+
+.prompt { margin: 0 0 0.25rem; color: var(--color-accent); font-family: "Fira Sans", monospace; font-size: clamp(0.85rem, 2vw, 1rem); }
+.prompt span { color: var(--color-primary); font-weight: 700; }
+.prompt i { display: inline-block; width: 0.62em; height: 1.05em; margin-left: 0.35rem; vertical-align: -0.16em; background: var(--sunny-yellow); animation: cursorBlink 850ms steps(1) infinite; }
+
+.title { display: flex; flex-direction: column; gap: 0.25rem; margin: 0; color: var(--color-accent); }
+.title > span {
+  display: block;
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+  box-shadow: none;
+  animation: none;
+  color: var(--color-primary);
+  font-family: "Fira Sans", monospace;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.title > span::before { content: none; }
+.title strong { font-family: "Manrope", sans-serif; font-size: clamp(3.1rem, 9vw, 6.5rem); font-weight: 500; line-height: 0.95; letter-spacing: -0.06em; }
+.quote { max-width: 580px; margin: 0; color: var(--color-accent); font-family: "Fira Sans", sans-serif; font-size: clamp(1rem, 2.5vw, 1.3rem); line-height: 1.55; }
+.actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+.availability { display: inline-flex; align-items: center; gap: 0.55rem; margin: 0; color: var(--color-accent); font-family: "Fira Sans", monospace; font-size: 0.82rem; }
+.availability span { width: 9px; height: 9px; border-radius: 50%; background: var(--color-primary); box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 18%, transparent); animation: statusPulse 1.8s ease-in-out infinite; }
+
+@keyframes terminalBoot { from { opacity: 0; transform: translateY(24px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes contentOnline { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes bootLine { from { opacity: 0; transform: translateX(8px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes scan { to { transform: translateY(110%); } }
+@keyframes cursorBlink { 50% { opacity: 0; } }
+@keyframes statusPulse { 50% { opacity: .45; transform: scale(.82); } }
+
+@media (max-width: 700px) {
+  .hero { padding: 6rem 0.85rem 3rem; }
+  .terminal { box-shadow: 7px 7px 0 color-mix(in srgb, var(--color-accent) 22%, transparent); }
+  .terminalBar { grid-template-columns: 1fr auto; }
+  .terminalBar > span:nth-child(2) { display: none; }
+  .bootLog { position: static; max-width: none; margin-bottom: 1.75rem; }
+  .heroContent { padding-top: 0; }
+  .actions { width: 100%; }
+  .actions a { width: 100%; box-sizing: border-box; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal, .heroContent, .bootLog p, .terminalScreen::after, .prompt i, .availability span { animation: none; opacity: 1; }
+  .terminalScreen::after { display: none; }
+}
