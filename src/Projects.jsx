@@ -1,9 +1,8 @@
 import styles from "./Projects.module.css";
 import Card from "./components/Card";
-import Button from "./components/Button";
 import tweentyfourtyeight from "./assets/2048.png"; // Assuming the profile image is in the assets folder
 import theCentralAsianChronicles from "./assets/theCentralAsianChronicles.png"; // Assuming the profile image is in the assets folder
-import Profile from "./assets/profile.jpg"; // Assuming the profile image is in the assets folder
+import PortfolioPreview from "./assets/laptop.jpg";
 import Carousel from "./components/Carousel";
 import VoyageNYC from "./assets/voyageNYC.png"; // Assuming the profile image is in the assets folder
 
@@ -13,47 +12,60 @@ function Projects() {
     {
       title: "My Website Portfolio",
       subTitle: "React Portfolio",
-      imageURL: Profile,
+      imageURL: PortfolioPreview,
       content:
-        "A personal portfolio website built with React showcasing my projects and skills.",
+        "A responsive developer portfolio that brings my work, experience, and technical identity together in one interactive interface.",
       link: "https://ratabeg.cv",
+      status: "LIVE",
+      stack: ["React", "Vite", "CSS Modules"],
+      slug: "portfolio-ui",
     },
     {
       title: "The Central Asian Chronicles",
-      subTitle: "E-commerce Store",
+      subTitle: "WordPress Publication",
       imageURL: theCentralAsianChronicles,
       content:
-        "A WordPress-powered publication dedicated to exploring the rich culture, history of Central Asia.",
+        "An editorial WordPress platform designed to make Central Asian culture, history, and long-form stories easy to explore.",
       link: "https://thecentralasianchronicles.asia/",
+      status: "LIVE",
+      stack: ["WordPress", "PHP", "SEO"],
+      slug: "central-asian-chronicles",
     },
     {
       title: "2048 Game",
       imageURL: tweentyfourtyeight,
-      subTitle: "Blog Platform",
+      subTitle: "Puzzle Game",
       content:
-        "2048 is a single-player sliding block puzzle game. The objective is to slide numbered tiles on a grid to combine them to create a tile with the number 2048.",
+        "A browser-based recreation of the classic sliding puzzle with responsive controls, score tracking, and smooth tile interactions.",
       link: "https://ratabeg.github.io/2048-game/",
+      status: "LIVE",
+      stack: ["JavaScript", "HTML", "CSS"],
+      slug: "2048-game",
     },
       {
       title: "VoyageNYC",
       imageURL: VoyageNYC,
       subTitle: "Website",
       content:
-        "A responsive and visually engaging website design for a fictional New York City tour company, showcasing front-end development, UI/UX design, and interactive features. ",
+        "A responsive travel experience for a fictional New York tour company, focused on visual storytelling and clear trip discovery.",
       link: "https://ratabeg.github.io/voyage-nyc/",
+      status: "LIVE",
+      stack: ["JavaScript", "Responsive UI", "GitHub Pages"],
+      slug: "voyage-nyc",
     },
   ];
 
   return (
-    <section id="projects" className={styles.projects}>
-      <span>
-        <h2 className={styles.title}>My Projects|</h2>
-        <h2 className={styles.subTitle}>A Showcase of What I’ve Built</h2>
-      </span>
+    <section id="projects" className={styles.projects} aria-labelledby="projects-title">
+      <header className={styles.sectionHeader}>
+        <p><span>visitor@portfolio</span>:~$ ls ./featured-work</p>
+        <h2 id="projects-title">PROJECTS.DIR</h2>
+        <span>Selected builds, experiments, and digital products.</span>
+      </header>
 
       <Carousel>
-        {projectData.map((project, index) => (
-          <Card key={index} {...project} className={styles.projectCard} />
+        {projectData.map((project) => (
+          <Card key={project.title} {...project} />
         ))}
       </Carousel>
     </section>

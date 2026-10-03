@@ -1,47 +1,74 @@
-import React from "react";
+import { FaBriefcase, FaCodeBranch, FaLocationDot } from "react-icons/fa6";
+import Profile from "../assets/profile.jpg";
 import style from "./AboutMe.module.css";
-import Profile from "../assets/profile.jpg"; // Assuming the profile image is in the assets folder
-import laptop from "../assets/jslogo.png"; // Assuming the profile image is in the assets folder
-import devlogo from "../assets/devlogo.png"; // Assuming the profile image is in the assets folder
-import gitlogo from "../assets/Git_icon.png"; // Assuming the profile image is in the assets folder
-import golang from "../assets/golang.png"; // Assuming the profile image is in the assets folder
+
+const skills = ["React", "TypeScript", "JavaScript", "WordPress", "PHP", "Python", "Go", "Git"];
 
 function AboutMe() {
   return (
-    <section className={style.aboutMe} id="about">
-      <span>
-      <h2 className={style.title}>About Me|</h2>
-      <h2 className={style.subTitle}>Who is Raouf?</h2>
-      </span>
+    <section className={style.aboutMe} id="about" aria-labelledby="about-title">
+      <header className={style.sectionHeader}>
+        <p><span>visitor@portfolio</span>:~$ open profile</p>
+        <h2 id="about-title">PROFILE://RAOUF</h2>
+        <span>Identity, experience, and the tools behind the work.</span>
+      </header>
 
-      <div className={style.content}>
-      <img className={style.background} src={devlogo} width={100}/>
-      <img className={style.background} src={laptop} width={100}/>
-      <img className={style.background} src={gitlogo} width={100}/>
+      <div className={style.profileGrid}>
+        <article className={style.identityCard}>
+          <div className={style.cardBar}>
+            <span>identity.json</span>
+            <span>RA-001</span>
+          </div>
+          <div className={style.photoFrame}>
+            <img src={Profile} alt="Raouf Atabeg" />
+            <span aria-hidden="true">SCANNING PROFILE</span>
+          </div>
+          <dl className={style.identityData}>
+            <div>
+              <dt><FaBriefcase aria-hidden="true" /> Role</dt>
+              <dd>Front-end Developer</dd>
+            </div>
+            <div>
+              <dt><FaLocationDot aria-hidden="true" /> Location</dt>
+              <dd>London, Ontario</dd>
+            </div>
+            <div>
+              <dt><FaCodeBranch aria-hidden="true" /> Focus</dt>
+              <dd>Interfaces &amp; web solutions</dd>
+            </div>
+          </dl>
+          <p className={style.status}><i aria-hidden="true" /> Open to opportunities</p>
+        </article>
 
-      <img className={style.background} src={golang} width={100}/>
+        <article className={style.bioTerminal}>
+          <div className={style.terminalTabs}>
+            <span className={style.activeTab}>about.txt</span>
+            <span>stack.config</span>
+            <i>● ● ●</i>
+          </div>
+          <div className={style.terminalBody}>
+            <p className={style.command}><span>$</span> cat ./profile/about.txt</p>
+            <div className={style.bioCopy}>
+              <p>
+                I&apos;m a front-end developer based in London, Ontario, with experience building
+                responsive interfaces, WordPress solutions, and internal tools.
+              </p>
+              <p>
+                I enjoy turning complex requirements into clear, dependable experiences and
+                working across the gap between design and implementation.
+              </p>
+            </div>
 
+            <p className={style.command}><span>$</span> list --skills</p>
+            <ul className={style.skills} aria-label="Technologies">
+              {skills.map((skill) => <li key={skill}>{skill}</li>)}
+            </ul>
 
-      <img
-        width={300}
-        height={"auto"}
-        src={Profile}
-        alt="Profile"
-        className={style.profileImage}
-      />
-      <p>
-        I'm a passionate developer with a love for creating innovative
-        solutions. I enjoy exploring new technologies and continuously improving
-        my skills. My journey in tech has been a blend of learning, building,
-        and sharing knowledge. I'm excited to connect with like-minded
-        individuals and contribute to meaningful projects. When I'm not coding,
-        you can find me exploring the outdoors, reading, or diving into the
-        latest tech trends. Feel free to reach out if you'd like to collaborate
-        or just chat about tech!
-      </p>
-
-
-      
+            <p className={style.command}><span>$</span> cat ./profile/offline.txt</p>
+            <p className={style.offline}>Outdoors, reading, and keeping up with the latest technology.</p>
+            <p className={style.ready}><span>[READY]</span> Let&apos;s build something useful.<i aria-hidden="true" /></p>
+          </div>
+        </article>
       </div>
     </section>
   );

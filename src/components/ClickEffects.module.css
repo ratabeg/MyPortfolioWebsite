@@ -1,0 +1,61 @@
+.layer {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.burst {
+  position: absolute;
+  width: 0;
+  height: 0;
+  animation: lifetime 600ms linear forwards;
+}
+
+.ring {
+  position: absolute;
+  left: -18px;
+  top: -18px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--color-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--color-neutral);
+  animation: ripple 550ms cubic-bezier(.16, 1, .3, 1) forwards;
+}
+
+.spark {
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-neutral);
+  animation: scatter 500ms cubic-bezier(.16, 1, .3, 1) forwards;
+}
+
+.spark:nth-child(even) {
+  background: var(--color-neutral);
+}
+
+@keyframes ripple {
+  from { transform: scale(.2); opacity: .9; }
+  to { transform: scale(1.8); opacity: 0; }
+}
+
+@keyframes scatter {
+  from { transform: rotate(var(--angle)) translateX(8px) scale(1); opacity: 1; }
+  to { transform: rotate(var(--angle)) translateX(38px) scale(0); opacity: 0; }
+}
+
+@keyframes lifetime {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layer { display: none; }
+}

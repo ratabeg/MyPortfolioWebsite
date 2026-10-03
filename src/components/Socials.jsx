@@ -1,23 +1,41 @@
-import React from 'react';
-import styles from "./Socials.module.css"
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa6';
+import styles from './Socials.module.css';
+
+const socialLinks = [
+    {
+        name: 'LinkedIn',
+        href: 'https://www.linkedin.com/in/ratabeg/',
+        icon: <FaLinkedinIn aria-hidden="true" />,
+        className: styles.linkedin,
+    },
+    {
+        name: 'GitHub',
+        href: 'https://github.com/ratabeg',
+        icon: <FaGithub aria-hidden="true" />,
+        className: styles.github,
+    },
+];
 
 function Socials() {
     return (
-        <div className={styles.socials}>
-            {/* Social media links go here */}
-            <uL className={styles.socialContainer}>
-                <li>
-                    <a href='https://www.linkedin.com/in/ratabeg/' className={styles.socialLinkBtn}>
-                        <img src='https://img.icons8.com/ios_filled/512/linkedin.png' width={50} alt='Linkedin icon'/>
-                    </a>
-                </li>
-                <li>
-                    <a href='https://github.com/ratabeg' className={styles.socialLinkBtn}>
-                        <img src='https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg' width={50} alt='Linkedin icon'/>
-                    </a>
-                </li>
-            </uL>
-        </div>
+        <nav className={styles.socials} aria-label="Social profiles">
+            <ul className={styles.socialContainer}>
+                {socialLinks.map(({ name, href, icon, className }) => (
+                    <li key={name}>
+                        <a
+                            href={href}
+                            className={`${styles.socialLinkBtn} ${className}`}
+                            aria-label={`${name} profile (opens in a new tab)`}
+                            data-label={name}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {icon}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </nav>
     );
 }
 

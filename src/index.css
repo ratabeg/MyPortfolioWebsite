@@ -64,5 +64,37 @@ a {
   color:var(--primary-dark)
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  button,
+  a:not(:has(button)) {
+    transition: scale 140ms ease-out;
+  }
 
+  button:active:not(:disabled),
+  a:active:not(:has(button)) {
+    scale: .95;
+  }
+}
+
+/* Native cursors stay responsive and fall back on unsupported browsers. */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: url('/cursor-arrow.svg') 4 3, auto;
+  }
+
+  a,
+  button,
+  [role='button'],
+  a *,
+  button *,
+  [role='button'] * {
+    cursor: url('/cursor-hand.svg') 13 5, pointer;
+  }
+
+  input,
+  textarea,
+  [contenteditable='true'] {
+    cursor: text;
+  }
+}
 
