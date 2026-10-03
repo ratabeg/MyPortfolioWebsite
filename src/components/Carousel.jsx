@@ -82,14 +82,14 @@ export default function Carousel({ children }) {
                 aria-current={index === active ? 'true' : undefined}
                 aria-controls={trackId}
                 onClick={() => goTo(index, index > active ? 1 : -1)}
-              ><span /></button>
+              ><span>{String(index + 1).padStart(2, '0')}</span></button>
             ))}
           </div>
           <button type="button" className={style.arrow} aria-label="Next project" aria-controls={trackId} onClick={() => move(1)}>→</button>
         </div>
       )}
       <p className={style.status} aria-live="polite" aria-atomic="true">
-        {active + 1} / {items.length} · {items[active].props.title ?? 'Project'}
+        PROJECT {String(active + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')} · {items[active].props.title ?? 'Project'}
       </p>
     </div>
   );
